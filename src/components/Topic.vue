@@ -36,10 +36,13 @@
 </template>
 <script>
   import { mapState } from 'vuex'
-
+ 
   export default {
     computed: mapState({
-      show: 'shows'
+      show: state => {
+        console.log(state)
+        return state.topic.shows
+      }
     }),
     methods: {
       displayTopic: function(str) {

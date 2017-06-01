@@ -70,7 +70,7 @@
 </template>
 <style>
 	.btn-group{
-		margin-left: 15px;
+		margin-left: -18px;
 		margin-top:20px;
 	}
 	.btn-group li{

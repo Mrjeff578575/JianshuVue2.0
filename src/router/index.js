@@ -5,20 +5,20 @@ import sidebar from '@/components/sidebar'
 import home from '@/components/home'
 import article from '@/components/article'
 import topic from '@/components/topic'
+import topic_article from '@/components/topic_article'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-			
     	path: '/home',
-    	name: 'Home',
+			redirect: {name: 'Home'},
     	component: home
     },
     {
     	path: '/',
-    	name: 'main',
+			name: 'Home',
     	component: sidebar,
 			children: [
         {
@@ -33,8 +33,13 @@ export default new Router({
 		},
     {
     	path: '/topic',
-    	name: 'Topic',
-    	component: topic
+    	component: topic,
+			children: [
+				{
+					path: '/topic',
+					component: topic_article
+				}
+			]
     }
   ]
 })

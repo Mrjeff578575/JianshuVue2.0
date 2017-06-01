@@ -7,6 +7,7 @@ import * as getters from './getters'
 //Modules
 import Home from './modules/home'
 import Article from './modules/article'
+import Topic from './modules/topic'
 
 Vue.use(Vuex)
 
@@ -17,7 +18,8 @@ export default new Vuex.Store({
     getters,
     modules: {
         Home,
-        Article
+        Article,
+        Topic
     },
     trict: debug
     // plugins: debug ? [createLogger()] : []

@@ -28,19 +28,23 @@
 	</div>
 </template>
 <script>
-	import { sortContent } from '../vuex/actions'
+	import { mapState } from 'vuex'
+	console.log('vuex');
 	export default {
 		data (){
 			let change = 'hot'
 			return {change}
 		},
-		vuex: {
-			getters: {
-				topic: state => state.topics,
-				show: state => state.show_2
+		computed:mapState({
+			topic: state => {
+				console.log(state)
+				return state.topic.topics
 			},
-			actions: {
-				sortContent
+			show: state => state.topic.show
+		}),
+		method: {
+			sortContent: function() {
+				this.$store.dispatch('sortContent');
 			}
 		}
 	}
