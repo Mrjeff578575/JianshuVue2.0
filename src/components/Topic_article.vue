@@ -38,9 +38,9 @@
 		computed:mapState({
 			topic: state => {
 				console.log(state)
-				return state.topic.topics
+				return state.Topic.topics
 			},
-			show: state => state.topic.show
+			show: state => state.Topic.show
 		}),
 		method: {
 			sortContent: function() {
@@ -92,9 +92,11 @@
 		margin-left: 55px;
 	}
 	.topic_content h5{
+		text-align: left;
 		margin-bottom: 3px;
 	}
 	.topic_content p{
+		text-align: left;
 		margin-bottom: 3px;
 		line-height: 20px;
 		color: #999999;

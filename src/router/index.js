@@ -6,6 +6,7 @@ import home from '@/components/home'
 import article from '@/components/article'
 import topic from '@/components/topic'
 import topic_article from '@/components/topic_article'
+import bonus from '@/components/bonus'
 
 Vue.use(Router)
 
@@ -28,18 +29,22 @@ export default new Router({
 						path: '/', 
 						component: article,
 					}]
-        }
-			]
-		},
-    {
-    	path: '/topic',
-    	component: topic,
-			children: [
+        },
 				{
 					path: '/topic',
-					component: topic_article
-				}
+					component: topic,
+					children: [
+						{
+							path: '/',
+							component: topic_article
+						}
+					]
+				},
 			]
-    }
+		},
+		{
+			path: '/bonus',
+			component: bonus
+		}
   ]
 })

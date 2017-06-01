@@ -35,13 +35,13 @@
 </div>
 </template>
 <script>
-  import { mapState } from 'vuex'
- 
-  export default {
+	import { mapState } from 'vuex'
+
+	export default{	
     computed: mapState({
       show: state => {
         console.log(state)
-        return state.topic.shows
+        return state.Topic.shows
       }
     }),
     methods: {
