@@ -14,6 +14,13 @@
     overflow-x:hidden;
     background-color: #f3f3f3;
   }
+  .clearfix:after {
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+    visibility: hidden;
+  }
   .fa-mobile{
     font-size: 26px;
     position: relative;

@@ -9,6 +9,7 @@ import Home from './modules/home'
 import Article from './modules/article'
 import Topic from './modules/topic'
 import bonus from './modules/bonus'
+import app from './modules/app'
 
 Vue.use(Vuex)
 
@@ -21,7 +22,8 @@ export default new Vuex.Store({
         Home,
         Article,
         Topic,
-        bonus
+        bonus,
+        app
     },
     trict: debug
     // plugins: debug ? [createLogger()] : []

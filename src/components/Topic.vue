@@ -40,7 +40,6 @@
 	export default{	
     computed: mapState({
       show: state => {
-        console.log(state)
         return state.Topic.shows
       }
     }),

@@ -29,7 +29,7 @@
 </template>
 <script>
 	import { mapState } from 'vuex'
-	console.log('vuex');
+
 	export default {
 		data (){
 			let change = 'hot'
@@ -37,7 +37,6 @@
 		},
 		computed:mapState({
 			topic: state => {
-				console.log(state)
 				return state.Topic.topics
 			},
 			show: state => state.Topic.show

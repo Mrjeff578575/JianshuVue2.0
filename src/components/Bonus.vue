@@ -12,22 +12,21 @@
 			<span><a href="#">更多分享</a></span>
 		</div>
 		<ul class="text-list">
-			<li v-for="article in articles_2" 
-				:style="{ background: article.bg, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundColor: '#ffffff'}" 
+			<li v-for="article in articles" :style="{ background: article.bg, backgroundSize: '100%', backgroundRepeat: 'no-repeat', backgroundColor: '#ffffff'}">
 				<div class="content">
 					<a class="mask" href="#">
 						<div class="button">阅读全文></div>
 					</a>
 					<div class="bonus-text">
-						<div class="bonus-text-title">{{article}}</div>
+						<div class="bonus-text-title">{{article.title}}</div>
 						<div class="line"></div>
 						<div class="bonus-text-content">
-							<!--{{article.content_1}}<br>
+							{{article.content_1}}<br>
 							{{article.content_2}}<br>
 							{{article.content_3}}<br>
 							{{article.content_4}}<br>
 							{{article.content_5}}<br>
-							{{article.content_6}}<br>-->
+							{{article.content_6}}<br>
 						</div>
 					</div>
 					<div class="author"></div>
@@ -38,30 +37,15 @@
 </template>
 <script>
 	import { mapState } from 'vuex'
-
+	// , :style="{}" 
 	export default {
-		data(){
-			let articles = [{
-					title:'无感是最舒适的爱情',
-					content_1:"爱情原本就是个很娇气的东西，",
-					content_2:"它经不起太多的矫情，你死我活和无理取闹，",
-					content_3:"也经不起任何的伪装，刻意讨好和忍辱负重。",
-					content_4:"当她拂去所有的惊喜，荣幸，不敢置信和小心翼翼，",
-					content_5:"才是爱情最原本的样子。",
-					content_6:"当她不再刻意的感受他的存在，",
-					author:'',
-					bg:'url(../../static/bonus_4.jpg)'
-			}]
-			let article 		
-			return {articles, article}
-		},
 		computed: mapState({
-			articles_2: function(state) {
+			articles: function(state) {
 				this.texts = state.bonus.texts
-				return [{article: this.texts.Jan}, {article: this.texts.Feb}, {article: this.texts.Mar}, 
-						{article: this.texts.Apr}, {article: this.texts.May}, {article: this.texts.Jun}, 
-						{article: this.texts.Jul}, {article: this.texts.Aug}, {article: this.texts.Sep}, 
-						{article: this.texts.Oct}, {article: this.texts.Nov},  {article: this.texts.Dec}]
+				return [this.texts.Jan, this.texts.Feb, this.texts.Mar, 
+						this.texts.Apr, this.texts.May, this.texts.Jun, 
+						this.texts.Jul, this.texts.Aug, this.texts.Sep, 
+						this.texts.Oct, this.texts.Nov, this.texts.Dec]
 			}
 		})
 	}
@@ -162,6 +146,7 @@
 		opacity: 0;
 		position: absolute;
 		top: 0;
+		left: 0;
 		z-index: 16;
 		background-color: #efefef;
 		width: 342px;

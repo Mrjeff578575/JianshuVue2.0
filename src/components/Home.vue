@@ -12,7 +12,7 @@
 	<div class="article-page">
 		<nav>
 			<span class="nav-text fir"><a href="#">发现</a></span>
-			<span class="nav-text"><router-link to="'../bonus'">2015精选</router-link></span>
+			<span class="nav-text"><router-link :to="{name: 'bonus'}">2015精选</router-link></span>
 			<span class="search clearfloat">
 				<span class="input">
 					<input type="search" placeholder="搜索">
@@ -20,7 +20,7 @@
 				<span class="search-icon"><i class="fa fa-seaSrch"></i></span>
 			</span>					
 		</nav>
-		<div class="article-list">
+		<div class="article-list clearfix">
 			<ul class="btn-group">
 				<li :class="{active: show === 'hot'}">
 					<router-link @click="displayArticle('hot')"
@@ -70,8 +70,8 @@
 </template>
 <style>
 	.btn-group{
-		float: left;
-		margin-left: -18px;
+		text-align: left;
+		margin-left: 18px;
 		margin-top:20px;
 	}
 	.btn-group li{
@@ -96,10 +96,7 @@
 
 	export default{	
 		computed: mapState({
-			show: state => {
-				console.log(state)
-				return state.Home.show
-			}
+			show: state => state.Home.show
 		}),
 		methods: {
 			displayArticle: function(str) {

@@ -3,7 +3,7 @@
   <div class="sidebar">
     <ul class="dropdown">
       <li :class="{active: show === 'home'}">
-        <router-link @click="show = 'home'" to="'/home/article'"><i class="fa fa-home"></i><span>&nbsp;&nbsp;首页</span></router-link>
+        <router-link @click="show = 'home'" :to="{name: 'Home'}"><i class="fa fa-home"></i><span>&nbsp;&nbsp;首页</span></router-link>
       </li>
       <li :class="{active: show === 'topic'}">
         <router-link @click="show = 'topic'" to="'/topic/topic_article'"><i class="fa fa-th"></i><span>&nbsp;&nbsp;专题</span></router-link>
@@ -30,77 +30,3 @@
   </div>
 </div>
 </template>
-<style>
-  .display-transition{
-    transition: all 0.5s;
-  }
-  .display-leave{
-    opacity: 0;
-    transform: translateX(50px);
-  } 
-  .display-enter{
-    opacity: 1;
-  }
-  .container{
-    height: 100%;
-  }
-  .dropdown .active{
-    background-color: #e78170;
-  }
-  .dropdown .active a{
-    color: #ffffff;
-  }
-  @media screen and (max-width: 1100px){
-    .home{
-      width: calc(100% - 80px);
-      margin-right: 0;
-    }
-  }
-  @media screen and (max-width: 1300px){
-    .home{
-      width: calc(100% - 240px);
-      margin-left: 40px;
-    }
-    .nav-user li{
-        width: 40px;
-        height: 30px;
-        overflow: hidden;
-    }
-    .sidebar{
-      transition: all 0.5s;
-      width: 40px;
-      overflow: hidden;
-    }
-    .sidebar li{
-      padding: 20px 0;
-    }
-    .sidebar li a{
-      padding: 0 auto;
-      margin:0 auto;
-    }
-    .sidebar i{
-      font-size: 30px;
-    }
-    .sidebar .fa-mobile{
-      margin-right: 8px;
-      font-size: 50px;
-    }
-  }
-</style>
-<script>
-    import { mapState } from 'vuex'
-
-    export default {
-        data () {
-            return {show:'home'}
-        },
-        computed: mapState({
-            login_success: 'login_success'
-        }),
-        method: {
-            changeLogin: function() {
-                this.$store.dispatch('changeLogin')
-            }
-        }
-    }
-</script>

@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import sidebar from '@/components/sidebar'
 import home from '@/components/home'
 import article from '@/components/article'
 import topic from '@/components/topic'
@@ -13,37 +12,28 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-    	path: '/home',
-			redirect: {name: 'Home'},
-    	component: home
-    },
-    {
     	path: '/',
+    	component: home,
 			name: 'Home',
-    	component: sidebar,
+			children: [{
+				path: '/', 
+				component: article,
+			}]
+		},
+		{
+			path: '/topic',
+			component: topic,
+			name: 'Topic',
 			children: [
-        {
-          path: '/',
-          component: home,
-					children: [{
-						path: '/', 
-						component: article,
-					}]
-        },
 				{
-					path: '/topic',
-					component: topic,
-					children: [
-						{
-							path: '/',
-							component: topic_article
-						}
-					]
-				},
+					path: '/',
+					component: topic_article
+				}
 			]
 		},
 		{
 			path: '/bonus',
+			name: 'bonus',
 			component: bonus
 		}
   ]
