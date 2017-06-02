@@ -13,19 +13,21 @@
       </ul>
       <ul class="nav-user">
         <li><a href="#"><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></a></li>
-        <li><router-link to="'/login'"><i class="fa fa-sign-in"></i><span>&nbsp;&nbsp;登录</span></router-link></li>
+        <li><router-link :to="{name: 'login'}"><i class="fa fa-sign-in"></i><span>&nbsp;&nbsp;登录</span></router-link></li>
       </ul>
     </div>
     <div class="home" id="app">
-      <router-view transition = 'display' transition-mode = 'out-in'></router-view>
+      <transition name="display">
+        <router-view transition = 'display' transition-mode = 'out-in'></router-view>
+      </transition>
     </div>
     <div class="rightbar">
       <nav v-if="!login_success">
-        <router-link to="'/login'" @click="changeLogin('login')"><i class="fa fa-sign-in"></i>登录</router-link>
-        <router-link to="'/login'" @click="changeLogin('register')"><i class="fa fa-user"></i>注册</router-link>
+        <router-link :to="{name: 'login', params: { loginWay: 'login'}}" ><i class="fa fa-sign-in"></i>登录</router-link>
+        <router-link :to="{name: 'login', params: { loginWay: 'register'}}" ><i class="fa fa-user"></i>注册</router-link>
       </nav>
       <nav v-if="login_success == 'true'">
-        <router-link to="'/login'" @click="changeLogin('login')"><i class="fa fa-sign-in"></i>个人信息</router-link>
+        <router-link :to="{name: 'login'}" v-on:click="changeLogin('login')"><i class="fa fa-sign-in"></i>个人信息</router-link>
       </nav>
     </div>
   </div>
@@ -41,16 +43,14 @@
       },
       computed: mapState({
           login_success: function(state) {
-            console.log(state)
             return state.app.login_success
           }
       }),
       method: {
-          changeLogin: function() {
-              this.$store.dispatch('changeLogin')
+          changeLogin: function(str) {
+              this.$store.dispatch('changeLoginWay', str)
           },
           changeShow: function(str) {
-              console.log(this)
               this.show = str;
           }
       },
@@ -58,6 +58,10 @@
         '$route'(to, from) {
           if (to.name) {
             this.show = to.name.toLowerCase();
+          }
+          if (to.params.loginWay) {
+            this.$store.dispatch('changeLoginWay', to.params.loginWay)
+            //this.changeLogin(to.params);
           }
         }
       }
@@ -72,15 +76,12 @@
     color: #2c3e50;
     margin-top: 60px;
   }
-  .display-transition{
-    transition: all 0.5s;
+  .display-enter-active, .display-leave-active{
+    transition: all .3s ease;
   }
-  .display-leave{
+  .display-enter, .display-leave-to {
     opacity: 0;
-    transform: translateX(50px);
-  } 
-  .display-enter{
-    opacity: 1;
+    transform: translateX(10px);
   }
   .container{
     height: 100%;

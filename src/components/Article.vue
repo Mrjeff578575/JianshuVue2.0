@@ -24,7 +24,7 @@
 		}),
 		methods: {
 			pushArticleInfo: function() {
-				this.$router.push({ name: 'article_info', params: { articleId: 123 }})
+				this.$router.push({ name: 'Home', params: { articleId: 123 }})
 			}
 		}
 	}

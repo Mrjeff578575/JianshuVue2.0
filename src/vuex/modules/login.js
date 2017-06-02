@@ -1,13 +1,13 @@
 import * as types from '../mutation-types'
 
 const state = {
-    show: 'home',
-    loginSuccess: false
+    loginway: 'login',
+    user: ''
 }
-
 const mutations = {
-	[types.CHANGELOGIN](state){
-        state.loginSuccess = !state.loginSuccess
+	[types.CHANGELOGINWAY](state, str){
+        console.log(str)
+        state.loginway = str
     }
 }
 

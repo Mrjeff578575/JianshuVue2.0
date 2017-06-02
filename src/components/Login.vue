@@ -3,9 +3,9 @@
 		<div class="login-logo"></div>
 		<div class="login-header">
 			<a  :class="{active: loginway == 'login'}" 
-						@click="changeLogin('login')">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;·</a>
+						@click="changeLoginWay('login')">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;&nbsp;·</a>
 			<a  :class="{active: loginway == 'register'}" 
-						@click="changeLogin('register')">&nbsp;&nbsp;&nbsp;&nbsp;注册&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+						@click="changeLoginWay('register')">&nbsp;&nbsp;&nbsp;&nbsp;注册&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
 		<div class="login-input" v-if="loginway === 'login' ">
 			<form class="form_login" action="http://localhost:5480/WebApp/login.php" method="post">
 				<div class="username">
@@ -61,7 +61,7 @@
 	</div>
 </template>
 <script>
-import { changeLogin } from '../vuex/actions'
+	import { mapState } from 'vuex'
 	export default{
 		data () {
 			let checked = 'true'
@@ -69,17 +69,15 @@ import { changeLogin } from '../vuex/actions'
 			let password
 			return {checked, username, password}
 		},
-		vuex:{
-			getters:{
-				loginway: state => state.loginway,
-				user: state => state.user,
-				login_success: state => state.login_success
+		computed: mapState({
+			loginway: state => state.login.loginway,
+			user: state => state.login.user,
+			login_success: state => state.app.login_success
+		}),
+		methods: {
+			changeLoginWay: function(str) {
+				this.$store.dispatch('changeLoginWay', str);
 			},
-			actions:{
-				changeLogin
-			}
-		},
-		methods:{
 			verify: function(){
 				if(this.username == user.name && this.password == user.password){
 					login_success = 'true'

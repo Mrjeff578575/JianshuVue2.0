@@ -114,6 +114,9 @@
     line-height: 40px;
     margin-left: 20px;
   }
+  .text h1{
+    text-align: left;
+  }
   .text a{
     color: #ffffff;
     text-align: center;

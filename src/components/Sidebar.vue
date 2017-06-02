@@ -3,13 +3,13 @@
   <div class="sidebar">
     <ul class="dropdown">
       <li :class="{active: show === 'home'}">
-        <router-link @click="show = 'home'" :to="{name: 'Home'}"><i class="fa fa-home"></i><span>&nbsp;&nbsp;首页</span></router-link>
+        <router-link :to="{name: 'Home'}"><i class="fa fa-home"></i><span>&nbsp;&nbsp;首页</span></router-link>
       </li>
       <li :class="{active: show === 'topic'}">
-        <router-link @click="show = 'topic'" to="'/topic/topic_article'"><i class="fa fa-th"></i><span>&nbsp;&nbsp;专题</span></router-link>
+        <router-link :to="'/topic/topic_article'"><i class="fa fa-th"></i><span>&nbsp;&nbsp;专题</span></router-link>
       </li>
       <li :class="{active: show === 'download'}">
-        <router-link @click="show = 'download'" to="'/download'"><i class="fa fa-mobile"></i><span>&nbsp;&nbsp;下载手机应用</span></router-link></li>
+        <router-link :to="'/download'"><i class="fa fa-mobile"></i><span>&nbsp;&nbsp;下载手机应用</span></router-link></li>
     </ul>
     <ul class="nav-user">
       <li><a href="#"><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></a></li>

@@ -23,44 +23,41 @@
 		<div class="article-list clearfix">
 			<ul class="btn-group">
 				<li :class="{active: show === 'hot'}">
-					<router-link @click="displayArticle('hot')"
-					   to="'/home/article'" 
-					>热门</router-link></li>
+					<a v-on:click="displayArticle('hot')">热门</a>
+				</li>
 				<li :class="{active: show === 'new'}">
-					<router-link @click="displayArticle('new')"
-					   to="'/home/article'" 
-					>新上榜</router-link></li>
+					<a v-on:click="displayArticle('new')">新上榜</a>
+				</li>
 				<li :class="{active: show === 'daily'}">
-					<router-link @click="displayArticle('daily')"
-					   to="'/home/article'" 
-					>日报</router-link></li>
+					<a v-on:click="displayArticle('daily')">日报</a>
+				</li>
 				<li :class="{active: show === 'weekhot'}">
 					<router-link @click="show = 'weekhot'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>七日热门</router-link></li>
 				<li :class="{active: show === 'monthhot'}">
 					<router-link @click="show = 'monthhot'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>三十日热门</router-link></li>
 				<li :class="{active: show === 'reward'}">
 					<router-link @click="show = 'reward'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>有奖活动</router-link></li>
 				<li :class="{active: show === 'publish'}">
 					<router-link @click="show = 'publish'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>简书出版</router-link></li>
 				<li :class="{active: show === 'video'}">
 					<router-link @click="show = 'vedio'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>简书播客</router-link></li>
 				<li :class="{active: show === 'hotnews'}">
 					<router-link @click="show = 'hotnews'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>时事热闻</router-link></li>
 				<li :class="{active: show === 'choice'}">
 					<router-link @click="show = 'choice'"
-					   to="'/home/article'" 
+					   :to="{name: 'Home'}"
 					>专题精选</router-link></li>
 			</ul>
 			<router-view></router-view>
@@ -89,6 +86,7 @@
 		padding: 5px 10px;
 		border: 1px solid #d9d9d9;
 		border-radius: 10px;
+		cursor: pointer;
 	}
 </style>
 <script>
@@ -100,7 +98,8 @@
 		}),
 		methods: {
 			displayArticle: function(str) {
-				this.$store.dispatch('displayArticle', str)
+				this.$store.dispatch('changeShowStatus', str)
+				this.$store.dispatch('changeArticleList', str)
 			}
 		}
 	}
