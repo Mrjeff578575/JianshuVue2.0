@@ -7,6 +7,10 @@ export const changeShowStatus = ({commit}, str) => {
 	commit(types.CHANGE_SHOW_STATUS, str)
 }
 
+export const changeTopicShow = ({commit}, str) => {
+	commit(types.CHANGE_TOPIC_SHOW, str)
+}
+
 export const changeLogin = ({commit}) => {
 	commit(types.CHANGELOGIN)
 }

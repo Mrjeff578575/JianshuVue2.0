@@ -60,7 +60,7 @@
 	.topic_article_container{
 		width: calc(100% - 35px);
 		height: calc(100% - 180px);
-		margin:45px 0 0 35px;
+		margin: 15px 0 0 35px;
 	}
 	.topic_article_container li{
 		padding: 15px 0 10px 0;
@@ -132,6 +132,7 @@
 	.sequence-nav{
 		margin-bottom: 10px;
 		color: #999999;
+		text-align: left;
 	}
 	.sequence-nav .active{
 		color: #000000;

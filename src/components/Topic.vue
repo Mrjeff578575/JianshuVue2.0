@@ -21,13 +21,11 @@
     <div class="article-list">
       <ul class="btn-group">
         <li :class="{active: show === 'hot'}">
-          <router-link @click="displayTopic('hot')"
-             to="'/topic/topic_article'" 
-          >热门</router-link></li>
+          <a @click="changeTopicShow('hot')"
+          >热门</a></li>
         <li :class="{active: show === 'recommend'}">
-          <router-link @click="displayTopic('recommend')"
-             to="'/topic/topic_article'" 
-          >推荐</router-link></li>
+          <a @click="changeTopicShow('recommend')"
+          >推荐</a></li>
       </ul>
     </div>
     <router-view></router-view>
@@ -40,12 +38,12 @@
 	export default{	
     computed: mapState({
       show: state => {
-        return state.Topic.shows
+        return state.Topic.show
       }
     }),
     methods: {
-      displayTopic: function(str) {
-         this.$store.dispatch('displayTopic', str)
+      changeTopicShow: function(str) {
+         this.$store.dispatch('changeTopicShow', str)
       }
     }
   } 

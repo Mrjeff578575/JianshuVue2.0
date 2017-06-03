@@ -12,7 +12,7 @@
           <router-link v-on:click="changeShow('download')" :to="'/download'"><i class="fa fa-mobile"></i><span>&nbsp;&nbsp;下载手机应用</span></router-link></li>
       </ul>
       <ul class="nav-user">
-        <li><a href="#"><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></a></li>
+        <li><router-link to="/test" ><i class="fa fa-font"></i><span>&nbsp;&nbsp;显示模式</span></router-link></li>
         <li><router-link :to="{name: 'login'}"><i class="fa fa-sign-in"></i><span>&nbsp;&nbsp;登录</span></router-link></li>
       </ul>
     </div>
@@ -55,15 +55,15 @@
           }
       },
       watch: {
-        '$route'(to, from) {
-          if (to.name) {
-            this.show = to.name.toLowerCase();
+          '$route'(to, from) {
+              if (to.name) {
+                this.show = to.name.toLowerCase()
+              }
+              if (to.params.loginWay) {
+                this.$store.dispatch('changeLoginWay', to.params.loginWay)
+                //this.changeLogin(to.params);
+              }
           }
-          if (to.params.loginWay) {
-            this.$store.dispatch('changeLoginWay', to.params.loginWay)
-            //this.changeLogin(to.params);
-          }
-        }
       }
   }
 </script>

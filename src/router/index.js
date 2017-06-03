@@ -11,43 +11,51 @@ import download from '@/components/download'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
     	path: '/',
     	component: home,
+		children: [{
+			path: '/',
 			name: 'Home',
-			children: [{
-				path: '/', 
-				component: article,
-			}]
-		},
-		{
-			path: '/topic',
-			component: topic,
-			name: 'Topic',
-			children: [
-				{
-					path: '/',
-					component: topic_article
-				}
-			]
-		},
-		{
-			path: '/bonus',
-			name: 'bonus',
-			component: bonus
-		},
-		{
-			path: '/login',
-			name: 'login',
-			component: login
-		},
-		{
-			path: '/download',
-			name: 'download',
-			component: download
-		},
-		{ path: '*', redirect: '/' }
+			component: article,
+		}]
+	},
+	{
+		path: '/topic',
+		component: topic,
+		children: [
+			{
+				path: '/',
+				name: 'Topic',
+				component: topic_article
+			}
+		]
+	},
+	{
+		path: '/bonus',
+		name: 'bonus',
+		component: bonus
+	},
+	{
+		path: '/login',
+		name: 'login',
+		component: login
+	},
+	{
+		path: '/download',
+		name: 'download',
+		component: download
+	},
+	{ 
+		path: '*', 
+		name: 'error',
+		redirect: {name: 'Home'} 
+	}
   ]
 })
+router.beforeEach((to, from, next) => {
+	next();
+})
+export default router

@@ -32,9 +32,12 @@ const state = {
 }
 
 const mutations = {
-	[types.DISPLAY_ARTICLE](state, str){
-        state.currentArticles = str;
-    }
+	[types.DISPLAY_ARTICLE](state, str) {
+        state.currentArticles = str
+    },
+	[types.CHANGE_TOPIC_SHOW](state, str) {
+		state.show = str
+	}
 }
 
 export default{
