@@ -1,4 +1,10 @@
 import * as types from '../mutation-types'
+import utils from '../utils'
+
+let hotJpgUrl = utils.changeStaticUrl('url(../../static/vue-demo-hot.jpg)')
+let newJpgUrl = utils.changeStaticUrl('url(../../static/vue-demo-new.jpg)')
+let dailyUrl = utils.changeStaticUrl('url(../../static/vue-demo-daily.jpg)')
+
 const articlesAll = {
 		fir: {
 			author:'徐丹妮',
@@ -8,7 +14,7 @@ const articlesAll = {
 			comment:'248',
 			like:'2342',
 			pay:'2',
-			src:'url(../../static/vue-demo-hot.jpg)'
+			src: hotJpgUrl 
 		},
 		sec: {
 			author:'阿俊',
@@ -18,7 +24,7 @@ const articlesAll = {
 			comment:'258',
 			like:'232',
 			pay:'88',
-			src:'url(../../static/vue-demo-new.jpg)'
+			src: newJpgUrl
 		},
 		thi: {
 			author:'尸叔',
@@ -28,7 +34,7 @@ const articlesAll = {
 			comment:'70',
 			like:'190',
 			pay:'0',
-			src:'url(../../static/vue-demo-daily.jpg)'
+			src: dailyUrl
 		}
 }
 const state = {
@@ -40,7 +46,7 @@ const state = {
 		comment:'248',
 		like:'2342',
 		pay:'2',
-		src:'url(../../static/vue-demo-hot.jpg)'
+		src: hotJpgUrl
 	}]
 }
 
