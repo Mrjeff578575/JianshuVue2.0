@@ -1,9 +1,10 @@
 import * as types from '../mutation-types'
+import utils from '../utils'
 
 const state = {
 	topics:{
 		fir: {
-			img:'../../static/topic_1.jpg',
+			img: utils.changeStaticUrl('../../static/topic_1.jpg'),
 			title:'游戏',
 			par:'玩转简书的第一步，从这个专题开始。\
 				  想上首页热门榜么？好内容想被更多人看到么？来投稿吧！\
@@ -15,7 +16,7 @@ const state = {
 			time:'20160620'		
 		},
 		sec: {
-			img:'../../static/topic_3.jpg',
+			img: utils.changeStaticUrl('../../static/topic_3.jpg'),
 			title:'诗',
 			par:'诗，让你感受自己的心灵。\
 				 专题主编：苏锦年 投稿须知：\

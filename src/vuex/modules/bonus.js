@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import utils from '../utils'
 
 const state = {
 	texts:{
@@ -11,7 +12,7 @@ const state = {
 			content_5:"因为你根本没想让自己成熟起来，",
 			content_6:"想让变的更优秀也不过是一句口头禅。",
 			author:'',
-			bg:'url(../../static/bonus_1.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_1.jpg)')
 		},
 		Feb:{
 			title:'使你更有思想的20本书',
@@ -22,7 +23,7 @@ const state = {
 			content_5:"",
 			content_6:"",
 			author:'',
-			bg:'url(../../static/bonus_2.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_2.jpg)')
 		},
 		Mar:{
 			title:'无感是最舒适的爱情',
@@ -33,7 +34,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_3.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_3.jpg)')
 		},
 		Apr:{
 			title:'无感是最舒适的爱情',
@@ -44,7 +45,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_4.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_4.jpg)')
 		},
 		May:{
 			title:'无感是最舒适的爱情',
@@ -55,7 +56,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_5.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_5.jpg)')
 		},
 		Jun:{
 			title:'无感是最舒适的爱情',
@@ -66,7 +67,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_6.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_6.jpg)')
 		},
 		Jul:{
 			title:'无感是最舒适的爱情',
@@ -77,7 +78,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_7.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_7.jpg)')
 		},
 		Aug:{
 			title:'无感是最舒适的爱情',
@@ -88,7 +89,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_8.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_8.jpg)')
 		},
 		Sep:{
 			title:'无感是最舒适的爱情',
@@ -99,7 +100,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_9.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_9.jpg)')
 		},
 		Oct:{
 			title:'无感是最舒适的爱情',
@@ -110,7 +111,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_10.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_10.jpg)')
 		},
 		Nov:{
 			title:'无感是最舒适的爱情',
@@ -121,7 +122,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_11.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_11.jpg)')
 		},
 		Dec:{
 			title:'无感是最舒适的爱情',
@@ -132,7 +133,7 @@ const state = {
 			content_5:"才是爱情最原本的样子。",
 			content_6:"当她不再刻意的感受他的存在，",
 			author:'',
-			bg:'url(../../static/bonus_12.jpg)'
+			bg: utils.changeStaticUrl('url(../../static/bonus_12.jpg)')
 		}
 	}
 }

@@ -1,10 +1,6 @@
 import * as types from '../mutation-types'
 import utils from '../utils'
 
-let hotJpgUrl = utils.changeStaticUrl('url(../../static/vue-demo-hot.jpg)')
-let newJpgUrl = utils.changeStaticUrl('url(../../static/vue-demo-new.jpg)')
-let dailyUrl = utils.changeStaticUrl('url(../../static/vue-demo-daily.jpg)')
-
 const articlesAll = {
 		fir: {
 			author:'徐丹妮',
@@ -14,7 +10,7 @@ const articlesAll = {
 			comment:'248',
 			like:'2342',
 			pay:'2',
-			src: hotJpgUrl 
+			src: utils.changeStaticUrl('url(../../static/vue-demo-hot.jpg)')
 		},
 		sec: {
 			author:'阿俊',
@@ -24,7 +20,7 @@ const articlesAll = {
 			comment:'258',
 			like:'232',
 			pay:'88',
-			src: newJpgUrl
+			src: utils.changeStaticUrl('url(../../static/vue-demo-new.jpg)')
 		},
 		thi: {
 			author:'尸叔',
@@ -34,7 +30,7 @@ const articlesAll = {
 			comment:'70',
 			like:'190',
 			pay:'0',
-			src: dailyUrl
+			src: utils.changeStaticUrl('url(../../static/vue-demo-daily.jpg)')
 		}
 }
 const state = {
@@ -46,7 +42,7 @@ const state = {
 		comment:'248',
 		like:'2342',
 		pay:'2',
-		src: hotJpgUrl
+		src: utils.changeStaticUrl('url(../../static/vue-demo-hot.jpg)')
 	}]
 }
 
